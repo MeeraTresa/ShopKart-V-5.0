@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>ShopKart</title>
+<style>
+	body{
+		background-image: url("images/home.jpg");
+	}
+	
+	#outdiv{
+		margin:50px auto;
+		background-color:black;
+		border-radius:25px;
+		width:30%;
+		height:65%;
+	}
+	
+	#indiv{
+		margin-left:20px auto;
+	}
+	
+	button{
+		background-color: #990033; 
+    	border: 3px solid ;
+    	border-radius: 15px;
+    	color: white;
+    	padding: 15px 32px;
+    	text-align: center;
+    	text-decoration: none;
+    	display: inline-block;
+    	font-size: 18px;
+    	font-weight:bold;
+    	
+	}
+</style>
+
+<script type="text/javascript">
+    function redirect1()
+    {
+    var url1 = "login.jsp";
+    window.location(url1);
+    }
+    
+    function redirect2()
+    {
+    var url2 = "register.jsp";
+    window.location(url2);
+    }
+    </script>
+</head>
+
+
+
+<body>
+
+<div id="outdiv">
+<div id="indiv">
+
+
+<div align="center">
+	<br><br>
+	<img src="images/logo.png"/>
+	<br><br><br><br>
+</div>
+
+<div align="center">
+	<button name="login" onClick="redirect1()" >Login</button>
+	<br><br>
+	<button name="register" onClick="redirect2()" >Register</button>
+	<br><br>
+</div>
+
+
+</div>
+</div>
+
+
+</body>
+</html>
