@@ -15,19 +15,18 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-/**
- * Servlet implementation class CatalogServ
- */
 
-//This is to do Edit Orders !!! Try retaining whatever added in the first order page !!
+
+
 @WebServlet("/CatalogServ")
 public class CatalogServ extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
    
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		try(Connection con = DBConnection.getConnect()){
-			
+		
+		
+		try(Connection con = DBConnection.getConnect()){		
 			
 			
 			String sql = "select * from product";
@@ -44,19 +43,18 @@ public class CatalogServ extends HttpServlet {
 				list.add(product);
 		      }
 			
-			System.out.println(request.getHeader("Referer")+ "  Referrer !!!!");
+			System.out.println(request.getHeader("Referer")+ "  Referrer !!!!\n The request coming from this !!!");
 	
 			System.out.println("I'm in Catalog Servlet !!");
 			System.out.println("I created the product  list : ");
 			System.out.println(list);
 		
-				
-				HttpSession s = request.getSession();
-				s.setAttribute("product", list);
+			HttpSession s = request.getSession();
+			s.setAttribute("product", list);
 				
 			
-		        RequestDispatcher view = request.getRequestDispatcher("Catalog.jsp");
-		          view.forward(request, response);		          
+		    RequestDispatcher view = request.getRequestDispatcher("Catalog.jsp");
+		    view.forward(request, response);		          
 		      			 
 		}catch(Exception e)
 		{
