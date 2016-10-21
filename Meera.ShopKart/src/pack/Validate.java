@@ -10,7 +10,7 @@ public class Validate {
 		boolean st = false;
 		try(Connection con = DBConnection.getConnect()){
 			PreparedStatement ps =con.prepareStatement
-                    ("select * from user where BINARY userid=? and BINARY password=?");
+                    ("select * from user where BINARY userid=? and BINARY password=?"); //Binary for case-sensitivity
 			ps.setString(1, un);
 			ps.setString(2, pw);
 			ResultSet rs = ps.executeQuery();
