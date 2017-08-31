@@ -35,6 +35,8 @@ public class CartServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private static AtomicLong idCounter = new AtomicLong();
 
+	
+	
 	//The function which generates the order ids in a predefined format 
 	public String createID() {
 		 String s = "";
